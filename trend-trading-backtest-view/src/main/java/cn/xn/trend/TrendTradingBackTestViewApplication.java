@@ -5,6 +5,7 @@ package cn.xn.trend;
  * @date 2020/5/9 0009 下午 3:14
  */
 
+import brave.sampler.Sampler;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.NetUtil;
@@ -13,6 +14,7 @@ import cn.hutool.core.util.StrUtil;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
@@ -27,9 +29,14 @@ public class TrendTradingBackTestViewApplication {
         int port = 0;
         int defaultPort = 8041;
         int eurekaServerPort = 8761;
+        int configServerPort = 8060;
 
+        if (NetUtil.isUsableLocalPort(configServerPort)) {
+            System.err.printf("检查到端口%d 未启用，判断 eureka 服务器没有启动，本服务无法使用，故退出%n", configServerPort);
+            System.exit(1);
+        }
         if (NetUtil.isUsableLocalPort(eurekaServerPort)) {
-            System.err.printf("检查到端口%d 未启用，判断 eureka 服务器没有启动，本服务无法使用，故退出%n", eurekaServerPort);
+            System.err.printf("检查到端口%d 未启用，判断 配置服务器没有启动，本服务无法使用，故退出%n", eurekaServerPort);
             System.exit(1);
         }
 
@@ -75,5 +82,10 @@ public class TrendTradingBackTestViewApplication {
         }
         new SpringApplicationBuilder(TrendTradingBackTestViewApplication.class).properties("server.port=" + port).run(args);
 
+    }
+
+    @Bean
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
     }
 }

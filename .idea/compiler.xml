@@ -12,8 +12,9 @@
         <module name="trend-trading-backtest-view" />
         <module name="index-gather-store-service" />
         <module name="eureka-server" />
-        <module name="index-zuul-service" />
+        <module name="index-config-server" />
         <module name="index-codes-service" />
+        <module name="index-zuul-service" />
         <module name="index-data-service" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
       <module name="child" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="index-codes-service" target="1.8" />
+      <module name="index-config-server" target="1.8" />
       <module name="index-data-service" target="1.8" />
       <module name="index-gather-store-service" target="1.8" />
       <module name="index-zuul-service" target="1.8" />
@@ -35,6 +37,7 @@
       <module name="child" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="index-codes-service" options="-parameters" />
+      <module name="index-config-server" options="-parameters" />
       <module name="index-data-service" options="-parameters" />
       <module name="index-gather-store-service" options="-parameters" />
       <module name="index-zuul-service" options="-parameters" />
