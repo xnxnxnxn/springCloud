@@ -7,14 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="child" />
+        <module name="index-hystrix-dashboard" />
         <module name="third-part-index-data-project" />
         <module name="trend-trading-backtest-service" />
         <module name="trend-trading-backtest-view" />
         <module name="index-gather-store-service" />
         <module name="eureka-server" />
         <module name="index-config-server" />
-        <module name="index-codes-service" />
         <module name="index-zuul-service" />
+        <module name="index-codes-service" />
         <module name="index-data-service" />
       </profile>
     </annotationProcessing>
@@ -25,6 +26,7 @@
       <module name="index-config-server" target="1.8" />
       <module name="index-data-service" target="1.8" />
       <module name="index-gather-store-service" target="1.8" />
+      <module name="index-hystrix-dashboard" target="1.8" />
       <module name="index-zuul-service" target="1.8" />
       <module name="third-part-index-data-project" target="1.8" />
       <module name="trend" target="1.8" />
@@ -40,6 +42,7 @@
       <module name="index-config-server" options="-parameters" />
       <module name="index-data-service" options="-parameters" />
       <module name="index-gather-store-service" options="-parameters" />
+      <module name="index-hystrix-dashboard" options="-parameters" />
       <module name="index-zuul-service" options="-parameters" />
       <module name="third-part-index-data-project" options="-parameters" />
       <module name="trend-trading-backtest-service" options="-parameters" />

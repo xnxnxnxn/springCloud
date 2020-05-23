@@ -3,13 +3,13 @@ spring:
     name: index-config-server
   cloud:
     config:
-#      label 表示 分支：
+      #      label 表示 分支：
       label: master
       server:
         git:
-#          uri 表示 git 地址：
+          #          uri 表示 git 地址：
           uri: https://github.com/xnxnxnxn/trendConfig/
-#          searchPaths 表示目录：
+          #          searchPaths 表示目录：
           searchPaths: config
 eureka:
   client:
